@@ -43,6 +43,7 @@ function dragula (initialContainers, options) {
   var drake = emitter({
     containers: o.containers,
     start: manualStart,
+	startWithMirror: manualStartWithMirror,
     end: end,
     cancel: cancel,
     remove: remove,
@@ -198,6 +199,16 @@ function dragula (initialContainers, options) {
     var context = canStart(item);
     if (context) {
       start(context);
+    }
+  }
+  
+  function manualStartWithMirror (item) {
+    var context = canStart(item);
+    if (context) {
+      start(context);
+	  // attach to mouse event
+	  eventualMovements();
+	  renderMirrorImage();
     }
   }
 
