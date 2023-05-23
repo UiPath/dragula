@@ -49,6 +49,7 @@ function dragula (initialContainers, options) {
     remove: remove,
     destroy: destroy,
     canMove: canMove,
+    drag: drag,
     dragging: false
   });
 
